@@ -18,7 +18,13 @@ public:
     // implement the "static create()" method manually
     CREATE_FUNC(ScRoot);
 
+    void onKeyPressed(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+    void onKeyReleased(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+    void update(float _d);
     SwWorld* m_world;
+
+    //
+
 };
 
 #endif // __SC_ROOT_H__
