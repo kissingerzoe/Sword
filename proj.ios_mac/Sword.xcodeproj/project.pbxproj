@@ -77,6 +77,8 @@
 		E2562C4B18E6B2F400C1EC12 /* SwWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2562C4718E6B2F400C1EC12 /* SwWorld.cpp */; };
 		E2562C4D18E6B5E600C1EC12 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = E2562C4C18E6B5E600C1EC12 /* hero.png */; };
 		E2562C4E18E6B5E600C1EC12 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = E2562C4C18E6B5E600C1EC12 /* hero.png */; };
+		E2E0E30A18F05A7000730CBA /* SwMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2E0E30918F05A7000730CBA /* SwMap.cpp */; };
+		E2E0E30B18F05A7000730CBA /* SwMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2E0E30918F05A7000730CBA /* SwMap.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,11 +279,14 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		E213B12418E693DF00EA210C /* ScRoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScRoot.cpp; path = ../Classes/ScRoot.cpp; sourceTree = "<group>"; };
 		E213B12718E6944B00EA210C /* ScRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScRoot.h; path = ../Classes/ScRoot.h; sourceTree = "<group>"; };
+		E229217518EEFAF900BFE343 /* SwMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwMap.h; sourceTree = "<group>"; };
+		E229217618EEFAF900BFE343 /* SwMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwMNode.h; sourceTree = "<group>"; };
 		E2562C4218E69DD600C1EC12 /* SwBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwBase.h; sourceTree = "<group>"; };
 		E2562C4318E69DD600C1EC12 /* SwWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwWorld.h; sourceTree = "<group>"; };
 		E2562C4618E6B2F400C1EC12 /* SwBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwBase.cpp; sourceTree = "<group>"; };
 		E2562C4718E6B2F400C1EC12 /* SwWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwWorld.cpp; sourceTree = "<group>"; };
 		E2562C4C18E6B5E600C1EC12 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
+		E2E0E30918F05A7000730CBA /* SwMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwMap.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,6 +490,9 @@
 		E2562C4118E69DD600C1EC12 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				E2E0E30918F05A7000730CBA /* SwMap.cpp */,
+				E229217518EEFAF900BFE343 /* SwMap.h */,
+				E229217618EEFAF900BFE343 /* SwMNode.h */,
 				E2562C4618E6B2F400C1EC12 /* SwBase.cpp */,
 				E2562C4718E6B2F400C1EC12 /* SwWorld.cpp */,
 				E2562C4218E69DD600C1EC12 /* SwBase.h */,
@@ -708,6 +716,7 @@
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 				E2562C4A18E6B2F400C1EC12 /* SwWorld.cpp in Sources */,
 				E213B12518E693DF00EA210C /* ScRoot.cpp in Sources */,
+				E2E0E30A18F05A7000730CBA /* SwMap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,6 +728,7 @@
 				E2562C4918E6B2F400C1EC12 /* SwBase.cpp in Sources */,
 				E213B12618E693DF00EA210C /* ScRoot.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
+				E2E0E30B18F05A7000730CBA /* SwMap.cpp in Sources */,
 				E2562C4B18E6B2F400C1EC12 /* SwWorld.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 			);

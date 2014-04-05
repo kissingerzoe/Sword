@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include <vector>
 class SwBase;
+class SwMap;
 using namespace std;
 class SwWorld{
  public:
@@ -22,5 +23,6 @@ class SwWorld{
   bool m_key_left=false;
   bool m_key_right=false;
   const float mc_speed=100.0f;
+  SwMap* m_map;
 };
 #endif

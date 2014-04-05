@@ -8,16 +8,16 @@ class SwSpriteConfig{
  public:
   float begin_time; 
   SwBase* sprite;
-}
+};
 class SwMNode{
  public:
   SwMNode(){
     for(int i=0;i<10;++i){
       SwSpriteConfig* _ssc =new SwSpriteConfig();
-      m_sprite_list.PushBack(_ssc);
+      m_sprite_list.push_back(_ssc);
     }
   }
  private:
   vector<SwSpriteConfig*> m_sprite_list;
-}
+};
 #endif
