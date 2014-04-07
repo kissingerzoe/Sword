@@ -6,4 +6,7 @@ SwMap::SwMap(){
     m_node_que.push(_n);
   }
 }
+SwMap:next_wave(){
+  m_node_que.pop().apper();
+}
 
