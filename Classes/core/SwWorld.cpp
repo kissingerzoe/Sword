@@ -3,7 +3,6 @@
 #include "SwBase.h"
 #include "SwMap.h"
 USING_NS_CC;
-
 SwWorld::SwWorld(cocos2d::Layer* _layer){
   m_layer=_layer;
 }
@@ -11,7 +10,7 @@ void SwWorld::init(){
   SwBase* _sb=new SwBase(this);
   m_sprite_list.push_back(_sb);
   m_hero=_sb;
-  m_map=new SwMap();
+  m_map=new SwMap(this);
 }
 
 void SwWorld::add_sprite(cocos2d::Sprite* _s){
@@ -82,7 +81,12 @@ void SwWorld::on_key_released(EventKeyboard::KeyCode keyCode)
     m_key_down=false;
   }
     break;
+  case EventKeyboard::KeyCode::KEY_SPACE:{
+    m_map->next_wave();
   }
+    break;
+  }
+  
 }
 
 
