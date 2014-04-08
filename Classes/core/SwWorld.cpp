@@ -11,10 +11,12 @@ void SwWorld::init(){
   m_sprite_list.push_back(_sb);
   m_hero=_sb;
   m_map=new SwMap(this);
+  add_sprite(m_hero);
 }
 
-void SwWorld::add_sprite(cocos2d::Sprite* _s){
-  m_layer->addChild(_s);
+void SwWorld::add_sprite(SwBase* _sb){
+  m_sprite_list.push_back(_sb);
+  m_layer->addChild(_sb->get_coco_sprite());
 }
 void SwWorld::update(float _d){
   if(m_key_left){
@@ -55,19 +57,17 @@ void SwWorld::on_key_pressed(EventKeyboard::KeyCode keyCode)
     break;
   case EventKeyboard::KeyCode::KEY_DOWN_ARROW:{
     m_key_down=true;
-  }
     break;
+  }
   }
 }
 
-void SwWorld::on_key_released(EventKeyboard::KeyCode keyCode)
-{
+void SwWorld::on_key_released(EventKeyboard::KeyCode keyCode){
   switch(keyCode){
   default:
     break;
-  case EventKeyboard::KeyCode::KEY_LEFT_ARROW:{
+  case EventKeyboard::KeyCode::KEY_LEFT_ARROW:
     m_key_left=false;
-  }
     break;
   case EventKeyboard::KeyCode::KEY_RIGHT_ARROW:{
     m_key_right=false;
@@ -85,8 +85,30 @@ void SwWorld::on_key_released(EventKeyboard::KeyCode keyCode)
     m_map->next_wave();
   }
     break;
+  case EventKeyboard::KeyCode::KEY_O:{
+    shot();
   }
-  
+    break;
+  }
+}
+
+void SwWorld::shot(){
+  b2Transform transform;
+  transform.SetIdentity();
+  b2RayCastInput _input;
+  _input.p1.Set(m_hero->get_pos().x,m_hero->get_pos().y);
+  _input.p2.Set(m_hero->get_pos().x,m_hero->get_pos().y+1.0f);
+  _input.maxFraction=1.0f;
+  int32 childIndex=0;
+  b2RayCastOutput output;
+  for(int i=0;i<m_sprite_list.size();++i){
+    if(m_sprite_list[i]!=m_hero){
+      bool hit=m_sprite_list[i]->get_b2poly()->RayCast(&output,_input,transform,childIndex);
+      if(hit){
+	m_sprite_list[i]->set_pos(m_sprite_list[i]->get_pos()+Point(0,10));
+      }
+    }
+  }
 }
 
 

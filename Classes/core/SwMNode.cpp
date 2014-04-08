@@ -14,5 +14,6 @@ void SwMNode::appear(){
   for(int i=0;i<m_sprite_list.size();++i){
     m_sprite_list[i]->sprite=new SwBase(m_world);
     m_sprite_list[i]->sprite->set_pos(Point(100+rand()%100,200+rand()%300));
+    m_world->add_sprite(m_sprite_list[i]->sprite);
   }
 }
