@@ -21,3 +21,10 @@ void SwBase::set_pos(cocos2d::Point _pos){
   _c.y=m_pos.y;
   m_shape->SetAsBox(m_tex_rect.size.width,m_tex_rect.size.height,_c,0.0f);
 }
+void SwBase::hurt(int _damage){
+  m_life-=_damage;
+  if(m_life<=0){
+    //dead;
+    m_world->remove_sprite(this);
+  }
+}

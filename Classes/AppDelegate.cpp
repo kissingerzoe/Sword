@@ -27,7 +27,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
     
     
-    director->getOpenGLView()->setFrameSize(640,960);
+    //director->getOpenGLView()->setFrameSize(640,960);
 
     // create a scene. it's an autorelease object
     auto scene = ScRoot::createScene();

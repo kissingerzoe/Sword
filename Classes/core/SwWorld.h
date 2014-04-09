@@ -11,12 +11,15 @@ class SwWorld{
   SwWorld(cocos2d::Layer* _layer);
   void init();
   void add_sprite(SwBase* _sb);
+  void remove_sprite(SwBase* _sb);
   void update(float _delta);
   void on_key_pressed(cocos2d::EventKeyboard::KeyCode keyCode);
   void on_key_released(cocos2d::EventKeyboard::KeyCode keyCode);
   void shot();
  private:
   vector<SwBase*> m_sprite_list;
+  vector<SwBase*> m_remove_list;
+  vector<SwBase*> m_add_list;
   SwBase* m_hero;
   cocos2d::Layer* m_layer;
   bool m_key_up=false;
