@@ -18,7 +18,7 @@ class SwWorld{
   void shot();
  private:
   vector<SwBase*> m_sprite_list;
-  vector<SwBase*> m_remove_list;
+  vector<int> m_remove_list;
   vector<SwBase*> m_add_list;
   SwBase* m_hero;
   cocos2d::Layer* m_layer;

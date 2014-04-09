@@ -1,5 +1,6 @@
 //ybzuo
 #include "SwBase.h"
+#include <cstdlib>
 USING_NS_CC;
 SwBase::SwBase(SwWorld* _sw){
   m_world=_sw;
@@ -13,6 +14,8 @@ SwBase::SwBase(SwWorld* _sw){
   m_shape=new b2PolygonShape();
   // m_shap
   // position the sprite on the center of the screen
+  //  Random.rand()
+  m_life=rand()%5+1;
 }
 void SwBase::set_pos(cocos2d::Point _pos){
   m_pos=_pos;
@@ -27,6 +30,8 @@ void SwBase::hurt(int _damage){
   if(m_life<=0){
     //dead;
     m_world->remove_sprite(this);
+  }else{
+    set_pos(m_pos+Point(0,rand()%50));
   }
 }
 SwBase::~SwBase(){

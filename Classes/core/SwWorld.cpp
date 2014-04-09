@@ -19,7 +19,12 @@ void SwWorld::add_sprite(SwBase* _sb){
 }
 
 void SwWorld::remove_sprite(SwBase* _sb){
-  m_remove_list.push_back(_sb);
+  if(_sb==NULL){return;}
+  for(int i=0;i<m_sprite_list.size();++i){
+    if(m_sprite_list[i]==_sb){
+      m_remove_list.push_back(i);
+    }
+  }
 }
 
 
@@ -42,8 +47,9 @@ void SwWorld::update(float _d){
   }
   if(m_remove_list.size()>0){
     for(int _i=0;_i<m_remove_list.size();++_i){
-      m_layer->removeChild(m_remove_list[_i]->get_coco_sprite());
-      delete m_remove_list[_i];
+      m_layer->removeChild(m_sprite_list[m_remove_list[_i]]->get_coco_sprite());
+      delete m_sprite_list[m_remove_list[_i]];
+      m_sprite_list[m_remove_list[_i]]=NULL;
     }
     m_remove_list.clear();
   }
@@ -121,10 +127,10 @@ void SwWorld::shot(){
   int32 childIndex=0;
   b2RayCastOutput output;
   for(int i=0;i<m_sprite_list.size();++i){
+    if(m_sprite_list[i]==NULL){continue;}
     if(m_sprite_list[i]!=m_hero){
       bool hit=m_sprite_list[i]->get_b2poly()->RayCast(&output,_input,transform,childIndex);
       if(hit){
-	m_sprite_list[i]->set_pos(m_sprite_list[i]->get_pos()+Point(0,10));
 	m_sprite_list[i]->hurt(1);
       }
     }
