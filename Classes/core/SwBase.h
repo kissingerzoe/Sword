@@ -8,12 +8,12 @@
 class SwBase{
  public:
   SwBase(SwWorld* _sw);
+  ~SwBase();
   void set_pos(cocos2d::Point _pos);
   void hurt(int _damage);
   inline cocos2d::Point get_pos(){return m_pos;}
   inline b2PolygonShape* get_b2poly(){return m_shape;}
   inline cocos2d::Sprite* get_coco_sprite(){return m_sprite;}
-  
  private:
   SwWorld* m_world;
   cocos2d::Point m_pos;

@@ -6,6 +6,7 @@ SwBase::SwBase(SwWorld* _sw){
   m_pos.x=200;
   m_pos.y=300;
   m_sprite = Sprite::create("hero.png");
+  m_sprite->retain();
   m_tex_rect=m_sprite->getTextureRect();
   m_sprite->setPosition(m_pos);
   //  m_world->add_sprite(this);
@@ -26,5 +27,14 @@ void SwBase::hurt(int _damage){
   if(m_life<=0){
     //dead;
     m_world->remove_sprite(this);
+  }
+}
+SwBase::~SwBase(){
+  if(m_sprite!=NULL){
+    m_sprite->release();
+  }
+  if(m_shape!=NULL){
+    delete m_shape;
+    m_shape=NULL;
   }
 }

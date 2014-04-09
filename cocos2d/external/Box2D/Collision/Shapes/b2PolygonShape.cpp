@@ -265,7 +265,8 @@ bool b2PolygonShape::RayCast(b2RayCastOutput* output, const b2RayCastInput& inpu
 	b2Vec2 p1 = b2MulT(xf.q, input.p1 - xf.p);
 	b2Vec2 p2 = b2MulT(xf.q, input.p2 - xf.p);
 	b2Vec2 d = p2 - p1;
-
+    
+    
 	float32 lower = 0.0f, upper = input.maxFraction;
 
 	int32 index = -1;

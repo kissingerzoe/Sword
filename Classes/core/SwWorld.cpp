@@ -42,9 +42,10 @@ void SwWorld::update(float _d){
   }
   if(m_remove_list.size()>0){
     for(int _i=0;_i<m_remove_list.size();++_i){
+      m_layer->removeChild(m_remove_list[_i]->get_coco_sprite());
       delete m_remove_list[_i];
     }
-    m_remove_list.clear();    
+    m_remove_list.clear();
   }
   if(m_add_list.size()>0){
     for(int _i=0;_i<m_add_list.size();++_i){
@@ -124,6 +125,7 @@ void SwWorld::shot(){
       bool hit=m_sprite_list[i]->get_b2poly()->RayCast(&output,_input,transform,childIndex);
       if(hit){
 	m_sprite_list[i]->set_pos(m_sprite_list[i]->get_pos()+Point(0,10));
+	m_sprite_list[i]->hurt(1);
       }
     }
   }
