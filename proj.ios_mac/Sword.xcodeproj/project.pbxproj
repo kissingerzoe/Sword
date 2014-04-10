@@ -77,6 +77,10 @@
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
 		E213B12518E693DF00EA210C /* ScRoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E213B12418E693DF00EA210C /* ScRoot.cpp */; };
 		E213B12618E693DF00EA210C /* ScRoot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E213B12418E693DF00EA210C /* ScRoot.cpp */; };
+		E2224AEA18F6FBD6005171E6 /* ma.png in Resources */ = {isa = PBXBuildFile; fileRef = E2224AE918F6FBD6005171E6 /* ma.png */; };
+		E2224AEB18F6FBD6005171E6 /* ma.png in Resources */ = {isa = PBXBuildFile; fileRef = E2224AE918F6FBD6005171E6 /* ma.png */; };
+		E2224AEF18F6FD3D005171E6 /* green_bow.png in Resources */ = {isa = PBXBuildFile; fileRef = E2224AEE18F6FD3D005171E6 /* green_bow.png */; };
+		E2224AF018F6FD3D005171E6 /* green_bow.png in Resources */ = {isa = PBXBuildFile; fileRef = E2224AEE18F6FD3D005171E6 /* green_bow.png */; };
 		E2562C4D18E6B5E600C1EC12 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = E2562C4C18E6B5E600C1EC12 /* hero.png */; };
 		E2562C4E18E6B5E600C1EC12 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = E2562C4C18E6B5E600C1EC12 /* hero.png */; };
 /* End PBXBuildFile section */
@@ -289,6 +293,8 @@
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
 		E213B12418E693DF00EA210C /* ScRoot.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ScRoot.cpp; path = ../Classes/ScRoot.cpp; sourceTree = "<group>"; };
 		E213B12718E6944B00EA210C /* ScRoot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScRoot.h; path = ../Classes/ScRoot.h; sourceTree = "<group>"; };
+		E2224AE918F6FBD6005171E6 /* ma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ma.png; sourceTree = "<group>"; };
+		E2224AEE18F6FD3D005171E6 /* green_bow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_bow.png; sourceTree = "<group>"; };
 		E2562C4C18E6B5E600C1EC12 /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -481,6 +487,8 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E2224AEE18F6FD3D005171E6 /* green_bow.png */,
+				E2224AE918F6FBD6005171E6 /* ma.png */,
 				E2562C4C18E6B5E600C1EC12 /* hero.png */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
 				1AFAF8BA16D35E4900DB1158 /* CloseSelected.png */,
@@ -676,11 +684,13 @@
 				E2562C4D18E6B5E600C1EC12 /* hero.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				E2224AEA18F6FBD6005171E6 /* ma.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				E2224AEF18F6FD3D005171E6 /* green_bow.png in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
@@ -700,9 +710,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
+				E2224AEB18F6FBD6005171E6 /* ma.png in Resources */,
 				E2562C4E18E6B5E600C1EC12 /* hero.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
+				E2224AF018F6FD3D005171E6 /* green_bow.png in Resources */,
 				5087E75517EB910900C73F5D /* HelloWorld.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,7 +6,7 @@ SwBase::SwBase(SwWorld* _sw){
   m_world=_sw;
   m_pos.x=200;
   m_pos.y=300;
-  m_sprite = Sprite::create("hero.png");
+  m_sprite = Sprite::create("ma.png");
   m_sprite->retain();
   m_tex_rect=m_sprite->getTextureRect();
   m_sprite->setPosition(m_pos);
