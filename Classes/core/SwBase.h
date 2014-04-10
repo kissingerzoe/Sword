@@ -10,6 +10,7 @@ class SwBase{
   SwBase(SwWorld* _sw);
   ~SwBase();
   void set_pos(cocos2d::Point _pos);
+  void set_rotate(float _rot);
   void hurt(int _damage);
   inline int get_life()const{return m_life;}
   inline cocos2d::Point get_pos(){return m_pos;}
@@ -18,7 +19,8 @@ class SwBase{
  private:
   SwWorld* m_world;
   cocos2d::Point m_pos;
-  cocos2d::Sprite* m_sprite; 
+  cocos2d::Sprite* m_sprite;
+  float m_rotate;
   b2PolygonShape* m_shape;
   cocos2d::Rect m_tex_rect;
   int m_life=3;

@@ -25,6 +25,11 @@ void SwBase::set_pos(cocos2d::Point _pos){
   _c.y=m_pos.y;
   m_shape->SetAsBox(m_tex_rect.size.width,m_tex_rect.size.height,_c,0.0f);
 }
+void SwBase::set_rotate(float _rot){
+  m_rotate=_rot;
+  m_sprite->setRotation(m_rotate);
+}
+
 void SwBase::hurt(int _damage){
   m_life-=_damage;
   if(m_life<=0){

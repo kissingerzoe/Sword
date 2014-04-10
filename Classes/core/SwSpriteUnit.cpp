@@ -17,11 +17,12 @@ bool SwSpriteUnit::update(float _d){
     }
     return false;
   }else{
-    return sprite->get_life()>0;
+    return sprite->get_life()<=0;
   }
 }
 void SwSpriteUnit::appear(){
   sprite=new SwBase(m_world);
   sprite->set_pos(begin_pos);
+  sprite->set_rotate(180.0f);
   m_world->add_sprite(sprite);
 }
