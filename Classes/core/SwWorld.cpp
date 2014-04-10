@@ -110,13 +110,7 @@ void SwWorld::on_key_released(EventKeyboard::KeyCode keyCode){
     m_key_down=false;
   }
     break;
-    /*
   case EventKeyboard::KeyCode::KEY_SPACE:{
-    m_map->next_wave();
-  }
-    break;
-    */
-  case EventKeyboard::KeyCode::KEY_O:{
     shot();
   }
     break;
