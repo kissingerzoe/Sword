@@ -5,17 +5,15 @@
 using namespace std;
 class SwBase;
 class SwWorld;
-class SwSpriteConfig{
- public:
-  float begin_time; 
-  SwBase* sprite;
-}; 
+class SwSpriteUnit;
 class SwMNode{
  public:
   SwMNode(SwWorld* _sw);
-  void appear();
+  // void appear();
+  bool update(float _detal);
  private:
-  vector<SwSpriteConfig*> m_sprite_list;
+  vector<SwSpriteUnit*> m_sprite_list;
   SwWorld* m_world;
+  float m_time;
 };
 #endif

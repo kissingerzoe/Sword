@@ -8,9 +8,11 @@ using namespace std;
 class SwMap{
  public:
   SwMap(SwWorld* _sw);
+  void update(float _detail);
   void next_wave();
  private:
   queue<SwMNode*> m_node_que;
+  SwMNode* m_current_node=NULL;
   SwWorld* m_world;
 };
 #endif

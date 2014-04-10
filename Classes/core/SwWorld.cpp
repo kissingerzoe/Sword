@@ -29,6 +29,7 @@ void SwWorld::remove_sprite(SwBase* _sb){
 
 
 void SwWorld::update(float _d){
+  //input
   if(m_key_left){
     Point _p=m_hero->get_pos();
     m_hero->set_pos(_p+Point(-mc_speed*_d,0)); 
@@ -45,6 +46,9 @@ void SwWorld::update(float _d){
     Point _p=m_hero->get_pos();
     m_hero->set_pos(_p+Point(0,-mc_speed*_d));
   }
+  //logic
+  m_map->update(_d);
+  //life
   if(m_remove_list.size()>0){
     for(int _i=0;_i<m_remove_list.size();++_i){
       m_layer->removeChild(m_sprite_list[m_remove_list[_i]]->get_coco_sprite());
@@ -106,10 +110,12 @@ void SwWorld::on_key_released(EventKeyboard::KeyCode keyCode){
     m_key_down=false;
   }
     break;
+    /*
   case EventKeyboard::KeyCode::KEY_SPACE:{
     m_map->next_wave();
   }
     break;
+    */
   case EventKeyboard::KeyCode::KEY_O:{
     shot();
   }
