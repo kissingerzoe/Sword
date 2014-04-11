@@ -12,11 +12,13 @@ class SwBase{
   void set_pos(cocos2d::Point _pos);
   void set_rotate(float _rot);
   void hurt(int _damage);
+  virtual void update(float _d){}
+  virtual void collide_update(SwBase* _s){}
   inline int get_life()const{return m_life;}
   inline cocos2d::Point get_pos(){return m_pos;}
   inline b2PolygonShape* get_b2poly(){return m_shape;}
   inline cocos2d::Sprite* get_coco_sprite(){return m_sprite;}
- private:
+ protected:
   SwWorld* m_world;
   cocos2d::Point m_pos;
   cocos2d::Sprite* m_sprite;

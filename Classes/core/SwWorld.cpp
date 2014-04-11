@@ -2,6 +2,8 @@
 #include "SwWorld.h"
 #include "SwBase.h"
 #include "SwMap.h"
+#include "SwwPoint.h"
+#include <cstdlib>
 USING_NS_CC;
 SwWorld::SwWorld(cocos2d::Layer* _layer){
   m_layer=_layer;
@@ -48,12 +50,35 @@ void SwWorld::update(float _d){
   }
   //logic
   m_map->update(_d);
+  for(int i=0;i<m_sprite_list.size();++i){
+    if(m_sprite_list[i]!=NULL){
+      m_sprite_list[i]->update(_d);
+    }
+  }
+  for(int i=0;i<m_sprite_list.size();++i){
+    if(m_sprite_list[i]!=NULL){
+      for(int j=0;j<m_sprite_list.size();++j){
+	if(i!=j){
+	  if(m_sprite_list[j]!=NULL){
+	    m_sprite_list[i]->collide_update(m_sprite_list[j]);
+	  }
+	}
+      }
+    }
+  }
   //life
   if(m_remove_list.size()>0){
     for(int _i=0;_i<m_remove_list.size();++_i){
-      m_layer->removeChild(m_sprite_list[m_remove_list[_i]]->get_coco_sprite());
-      delete m_sprite_list[m_remove_list[_i]];
-      m_sprite_list[m_remove_list[_i]]=NULL;
+      int _sid=m_remove_list[_i];
+      SwBase* _sb=m_sprite_list[_sid];
+      if(_sb!=NULL){
+	if(_sb->get_coco_sprite()!=NULL){
+	  m_layer->removeChild(m_sprite_list[_sid]->get_coco_sprite());
+	}
+	delete _sb;
+	_sb=NULL;
+      }
+      m_sprite_list[_sid]=NULL;
     }
     m_remove_list.clear();
   }
@@ -118,6 +143,12 @@ void SwWorld::on_key_released(EventKeyboard::KeyCode keyCode){
 }
 
 void SwWorld::shot(){
+  for(int i=0;i<3;++i){
+    SwwPoint* _p=new SwwPoint(this,m_hero,Point(-200+rand()%400,600));
+    _p->set_pos(m_hero->get_pos()+Point(0,10));
+    add_sprite(_p);
+  }
+  return;
   b2Transform transform;
   transform.SetIdentity();
   b2RayCastInput _input;
@@ -129,9 +160,11 @@ void SwWorld::shot(){
   for(int i=0;i<m_sprite_list.size();++i){
     if(m_sprite_list[i]==NULL){continue;}
     if(m_sprite_list[i]!=m_hero){
-      bool hit=m_sprite_list[i]->get_b2poly()->RayCast(&output,_input,transform,childIndex);
-      if(hit){
-	m_sprite_list[i]->hurt(1);
+      if(m_sprite_list[i]->get_b2poly()!=NULL){
+	bool hit=m_sprite_list[i]->get_b2poly()->RayCast(&output,_input,transform,childIndex);
+	if(hit){
+	  m_sprite_list[i]->hurt(1);
+	}
       }
     }
   }

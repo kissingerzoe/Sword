@@ -26,7 +26,7 @@ class SwWorld{
   bool m_key_down=false;
   bool m_key_left=false;
   bool m_key_right=false;
-  const float mc_speed=100.0f;
+  const float mc_speed=200.0f;
   SwMap* m_map;
 };
 #endif

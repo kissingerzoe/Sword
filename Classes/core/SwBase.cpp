@@ -4,26 +4,21 @@
 USING_NS_CC;
 SwBase::SwBase(SwWorld* _sw){
   m_world=_sw;
-  m_pos.x=200;
-  m_pos.y=300;
   m_sprite = Sprite::create("ma.png");
   m_sprite->retain();
   m_tex_rect=m_sprite->getTextureRect();
-  m_sprite->setPosition(m_pos);
-  //  m_world->add_sprite(this);
   m_shape=new b2PolygonShape();
-  // m_shap
-  // position the sprite on the center of the screen
-  //  Random.rand()
   m_life=rand()%5+1;
 }
 void SwBase::set_pos(cocos2d::Point _pos){
   m_pos=_pos;
   m_sprite->setPosition(m_pos);
-  b2Vec2 _c;
-  _c.x=m_pos.x;
-  _c.y=m_pos.y;
-  m_shape->SetAsBox(m_tex_rect.size.width,m_tex_rect.size.height,_c,0.0f);
+  if(m_shape!=NULL){
+    b2Vec2 _c;
+    _c.x=m_pos.x;
+    _c.y=m_pos.y;
+    m_shape->SetAsBox(m_tex_rect.size.width,m_tex_rect.size.height,_c,0.0f);
+  }
 }
 void SwBase::set_rotate(float _rot){
   m_rotate=_rot;
