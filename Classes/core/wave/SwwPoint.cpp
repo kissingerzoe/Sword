@@ -15,6 +15,13 @@ SwwPoint::SwwPoint(SwWorld* _sw,SwBase* _owner,Point _speed):SwBase(_sw){
 }
 
 void SwwPoint::update(float _d){
+  if(m_life_time>0.0f){
+    m_life_time-=_d;
+    if(m_life_time<=0.0f){
+      m_life_time=-1.0f;
+      m_world->remove_sprite(this);
+    }  
+  }
   set_pos(m_pos+m_speed*_d);
 }
 

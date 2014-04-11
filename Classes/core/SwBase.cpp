@@ -12,7 +12,7 @@ SwBase::SwBase(SwWorld* _sw){
 }
 void SwBase::set_pos(cocos2d::Point _pos){
   m_pos=_pos;
-  m_sprite->setPosition(m_pos);
+  m_sprite->setPosition(m_world->fix_pos(m_pos));
   if(m_shape!=NULL){
     b2Vec2 _c;
     _c.x=m_pos.x;

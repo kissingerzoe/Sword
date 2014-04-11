@@ -7,11 +7,16 @@
 USING_NS_CC;
 SwWorld::SwWorld(cocos2d::Layer* _layer){
   m_layer=_layer;
+  m_size = Director::getInstance()->getVisibleSize();
+  m_half_size.x=m_size.width*0.5f;
+  m_half_size.y=0.0f;
+  m_origin = Director::getInstance()->getVisibleOrigin();
 }
 void SwWorld::init(){
   SwBase* _sb=new SwBase(this);
   // m_sprite_list.push_back(_sb);
   m_hero=_sb;
+  m_hero->set_pos(Point(0,50));
   m_map=new SwMap(this);
   add_sprite(m_hero);
 }
@@ -48,6 +53,7 @@ void SwWorld::update(float _d){
     Point _p=m_hero->get_pos();
     m_hero->set_pos(_p+Point(0,-mc_speed*_d));
   }
+  //  CCLog("x:%f,y:%f",m_hero->get_pos().x,m_hero->get_pos().y);
   //logic
   m_map->update(_d);
   for(int i=0;i<m_sprite_list.size();++i){

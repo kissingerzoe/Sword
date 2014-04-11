@@ -4,7 +4,7 @@
 #include "SwWorld.h"
 USING_NS_CC;
 SwSpriteUnit::SwSpriteUnit(SwWorld* _s){
-  begin_time=2.0f+rand()%3;
+  begin_time=1.0f;
   begin_pos=Point(100+rand()%100,200+rand()%300);
   m_world=_s;
 }

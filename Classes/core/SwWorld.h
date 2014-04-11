@@ -16,6 +16,7 @@ class SwWorld{
   void on_key_pressed(cocos2d::EventKeyboard::KeyCode keyCode);
   void on_key_released(cocos2d::EventKeyboard::KeyCode keyCode);
   void shot();
+  inline cocos2d::Point fix_pos(cocos2d::Point _p){return _p+m_half_size;}
  private:
   vector<SwBase*> m_sprite_list;
   vector<int> m_remove_list;
@@ -28,5 +29,8 @@ class SwWorld{
   bool m_key_right=false;
   const float mc_speed=200.0f;
   SwMap* m_map;
+  cocos2d::Size m_size;
+  cocos2d::Point m_origin;
+  cocos2d::Point m_half_size;
 };
 #endif
