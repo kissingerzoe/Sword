@@ -27,6 +27,7 @@ class SwWorld{
   bool m_key_down=false;
   bool m_key_left=false;
   bool m_key_right=false;
+  bool m_key_shot=false;
   const float mc_speed=200.0f;
   SwMap* m_map;
   cocos2d::Size m_size;

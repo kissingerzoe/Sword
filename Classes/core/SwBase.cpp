@@ -1,15 +1,25 @@
 //ybzuo
 #include "SwBase.h"
+#include "SwWeapon.h"
 #include <cstdlib>
 USING_NS_CC;
 SwBase::SwBase(SwWorld* _sw){
   m_world=_sw;
-  m_sprite = Sprite::create("ma.png");
+  init("ma.png");
+}
+SwBase::SwBase(SwWorld* _sw,string _file){
+  m_world=_sw;
+  init(_file);
+}
+void SwBase::init(string _file){
+  m_sprite = Sprite::create(_file);
   m_sprite->retain();
   m_tex_rect=m_sprite->getTextureRect();
   m_shape=new b2PolygonShape();
   m_life=rand()%5+1;
 }
+
+
 void SwBase::set_pos(cocos2d::Point _pos){
   m_pos=_pos;
   m_sprite->setPosition(m_world->fix_pos(m_pos));
@@ -32,6 +42,16 @@ void SwBase::hurt(int _damage){
     m_world->remove_sprite(this);
   }else{
     set_pos(m_pos+Point(0,rand()%50));
+  }
+}
+void SwBase::shot(){
+  if(m_weapon!=NULL){
+    m_weapon->shot();
+  }
+}
+void SwBase::update(float _d){
+  if(m_weapon!=NULL){
+    m_weapon->update(_d);
   }
 }
 SwBase::~SwBase(){

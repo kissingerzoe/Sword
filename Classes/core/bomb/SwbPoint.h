@@ -1,12 +1,11 @@
 //ybzuo
 //wave
-#ifndef __SWW_POINT_H__
-#define __SWW_POINT_H__
+#ifndef __SWB_POINT_H__
+#define __SWB_POINT_H__
 #include "SwBase.h"
-#include <vector>
-class SwwPoint:public SwBase{
+class SwbPoint:public SwBase{
  public:
-  SwwPoint(SwWorld* _sw,SwBase* _owner,cocos2d::Point _speed);
+  SwbPoint(SwWorld* _sw,SwBase* _owner,cocos2d::Point _speed);
   void update(float _d);
   void collide_update(SwBase* _sb);
  private:

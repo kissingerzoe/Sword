@@ -1,7 +1,7 @@
-#include "SwwPoint.h"
+#include "SwbPoint.h"
 #include "SwWorld.h"
 USING_NS_CC;
-SwwPoint::SwwPoint(SwWorld* _sw,SwBase* _owner,Point _speed):SwBase(_sw){
+SwbPoint::SwbPoint(SwWorld* _sw,SwBase* _owner,Point _speed):SwBase(_sw){
   m_world=_sw;
   m_owner=_owner;
   m_speed=_speed;
@@ -14,7 +14,7 @@ SwwPoint::SwwPoint(SwWorld* _sw,SwBase* _owner,Point _speed):SwBase(_sw){
   m_sprite->setRotation(m_rotate);
 }
 
-void SwwPoint::update(float _d){
+void SwbPoint::update(float _d){
   if(m_life_time>0.0f){
     m_life_time-=_d;
     if(m_life_time<=0.0f){
@@ -25,7 +25,7 @@ void SwwPoint::update(float _d){
   set_pos(m_pos+m_speed*_d);
 }
 
-void SwwPoint::collide_update(SwBase* _d){
+void SwbPoint::collide_update(SwBase* _d){
   if((_d==this)||(_d==m_owner)||(_d->get_b2poly()==NULL)){
     return;
   }
@@ -38,7 +38,7 @@ void SwwPoint::collide_update(SwBase* _d){
 }
 
 /*
-void SwwPoint::update(){
+void SwbPoint::update(){
   
 }
 */
