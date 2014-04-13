@@ -14,7 +14,7 @@ SwWorld::SwWorld(cocos2d::Layer* _layer){
   m_origin = Director::getInstance()->getVisibleOrigin();
 }
 void SwWorld::init(){
-  SwBase* _sb=new SwBase(this,"dao.png");
+  SwBase* _sb=new SwBase(this,"dao.png","dao_shot.png");
   m_hero=_sb;
   m_hero->take_weapon(new SwWeapon(this,m_hero));
   m_hero->set_pos(Point(0,50));

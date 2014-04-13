@@ -21,7 +21,7 @@ void SwWeapon::real_shot(){
   // for(int i=0;i<2;++i){
   // SwbPoint* _p=new SwwPoint(this,m_hero,Point(-200+rand()%400,600));
   SwbPoint* _p=new SwbPoint(m_world,m_owner,Point(0,m_speed));
-  _p->set_pos(m_owner->get_pos()+Point(0,10));
+  _p->set_pos(m_owner->get_pos()+Point(0,50));
   m_world->add_sprite(_p);
   // }
 }

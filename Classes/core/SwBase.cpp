@@ -7,9 +7,11 @@ SwBase::SwBase(SwWorld* _sw){
   m_world=_sw;
   init("ma.png");
 }
-SwBase::SwBase(SwWorld* _sw,string _file){
+SwBase::SwBase(SwWorld* _sw,string _idle,string _shot){
   m_world=_sw;
-  init(_file);
+  init(_idle);
+  m_idle_p=_idle;
+  m_shot_p=_shot;
 }
 void SwBase::init(string _file){
   m_sprite = Sprite::create(_file);
@@ -47,11 +49,20 @@ void SwBase::hurt(int _damage){
 void SwBase::shot(){
   if(m_weapon!=NULL){
     m_weapon->shot();
+    m_sprite->setTexture(m_shot_p);
+    m_in_shot_tick=mc_shot_time;
   }
 }
 void SwBase::update(float _d){
   if(m_weapon!=NULL){
     m_weapon->update(_d);
+    if(m_in_shot_tick>0.0f){
+      m_in_shot_tick-=_d;
+      if(m_in_shot_tick<=0.0f){
+	m_in_shot_tick=-1.0f;
+	m_sprite->setTexture(m_idle_p);
+      }
+    }
   }
 }
 SwBase::~SwBase(){

@@ -9,7 +9,7 @@ class SwWeapon;
 class SwBase{
  public:
   SwBase(SwWorld* _sw);
-  SwBase(SwWorld* _sw,string _file);
+  SwBase(SwWorld* _sw,string _idle,string _shot);
   ~SwBase();
   void set_pos(cocos2d::Point _pos);
   void set_rotate(float _rot);
@@ -22,7 +22,6 @@ class SwBase{
   inline cocos2d::Point get_pos(){return m_pos;}
   inline b2PolygonShape* get_b2poly(){return m_shape;}
   inline cocos2d::Sprite* get_coco_sprite(){return m_sprite;}
-  
  private:
   void init(string _file);
  protected:
@@ -34,5 +33,10 @@ class SwBase{
   cocos2d::Rect m_tex_rect;
   int m_life=3;
   SwWeapon* m_weapon=NULL;
+
+  string m_idle_p="ma.png";
+  string m_shot_p="";
+  float m_in_shot_tick=-1.0f;
+  const float mc_shot_time=0.1f;
 };
 #endif
