@@ -25,12 +25,16 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		384347C318F64CEC00B3E3DB /* SwSpriteUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384347C118F64CEC00B3E3DB /* SwSpriteUnit.cpp */; };
-		384347C418F64CEC00B3E3DB /* SwSpriteUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384347C118F64CEC00B3E3DB /* SwSpriteUnit.cpp */; };
-		384C541618F3B04900E45CC2 /* SwBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384C540E18F3B04900E45CC2 /* SwBase.cpp */; };
-		384C541718F3B04900E45CC2 /* SwMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384C541018F3B04900E45CC2 /* SwMap.cpp */; };
-		384C541818F3B04900E45CC2 /* SwMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384C541218F3B04900E45CC2 /* SwMNode.cpp */; };
-		384C541918F3B04900E45CC2 /* SwWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 384C541418F3B04900E45CC2 /* SwWorld.cpp */; };
+		38302DD218FFFC3C00C81078 /* SwBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DD118FFFC3C00C81078 /* SwBase.cpp */; };
+		38302DD318FFFC3C00C81078 /* SwBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DD118FFFC3C00C81078 /* SwBase.cpp */; };
+		38302DD518FFFC6100C81078 /* SwWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DD418FFFC6100C81078 /* SwWorld.cpp */; };
+		38302DD618FFFC6100C81078 /* SwWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DD418FFFC6100C81078 /* SwWorld.cpp */; };
+		38302DD818FFFC7E00C81078 /* SwMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DD718FFFC7E00C81078 /* SwMap.cpp */; };
+		38302DD918FFFC7E00C81078 /* SwMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DD718FFFC7E00C81078 /* SwMap.cpp */; };
+		38302DE118FFFCAB00C81078 /* SwMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DDC18FFFCAB00C81078 /* SwMNode.cpp */; };
+		38302DE218FFFCAB00C81078 /* SwMNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DDC18FFFCAB00C81078 /* SwMNode.cpp */; };
+		38302DE318FFFCAB00C81078 /* SwSpriteUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DDE18FFFCAB00C81078 /* SwSpriteUnit.cpp */; };
+		38302DE418FFFCAB00C81078 /* SwSpriteUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38302DDE18FFFCAB00C81078 /* SwSpriteUnit.cpp */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
 		503AE10017EB989F00D1A890 /* AppController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FB17EB989F00D1A890 /* AppController.mm */; };
 		503AE10117EB989F00D1A890 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 503AE0FC17EB989F00D1A890 /* main.m */; };
@@ -85,8 +89,6 @@
 		E2562C4E18E6B5E600C1EC12 /* hero.png in Resources */ = {isa = PBXBuildFile; fileRef = E2562C4C18E6B5E600C1EC12 /* hero.png */; };
 		E28209ED18FA3DE0005F9721 /* SwAction.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28209E818FA3DE0005F9721 /* SwAction.cpp */; };
 		E28209EE18FA3DE0005F9721 /* SwActionHeart.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28209EA18FA3DE0005F9721 /* SwActionHeart.cpp */; };
-		E28209FB18FA4FAB005F9721 /* #SwWave.h# in Resources */ = {isa = PBXBuildFile; fileRef = E28209F818FA4FAB005F9721 /* #SwWave.h# */; };
-		E28209FC18FA4FAB005F9721 /* #SwWave.h# in Resources */ = {isa = PBXBuildFile; fileRef = E28209F818FA4FAB005F9721 /* #SwWave.h# */; };
 		E28209FD18FA4FAB005F9721 /* SwbPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28209F918FA4FAB005F9721 /* SwbPoint.cpp */; };
 		E28209FE18FA4FAB005F9721 /* SwbPoint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E28209F918FA4FAB005F9721 /* SwbPoint.cpp */; };
 		E2820A0518FA58F8005F9721 /* SwWeapon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E2820A0118FA58F8005F9721 /* SwWeapon.cpp */; };
@@ -254,16 +256,16 @@
 		1D6058910D05DD3D006BFB54 /* Sword iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sword iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		384347C118F64CEC00B3E3DB /* SwSpriteUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwSpriteUnit.cpp; sourceTree = "<group>"; };
-		384347C218F64CEC00B3E3DB /* SwSpriteUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwSpriteUnit.h; sourceTree = "<group>"; };
-		384C540E18F3B04900E45CC2 /* SwBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwBase.cpp; sourceTree = "<group>"; };
-		384C540F18F3B04900E45CC2 /* SwBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwBase.h; sourceTree = "<group>"; };
-		384C541018F3B04900E45CC2 /* SwMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwMap.cpp; sourceTree = "<group>"; };
-		384C541118F3B04900E45CC2 /* SwMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwMap.h; sourceTree = "<group>"; };
-		384C541218F3B04900E45CC2 /* SwMNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwMNode.cpp; sourceTree = "<group>"; };
-		384C541318F3B04900E45CC2 /* SwMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwMNode.h; sourceTree = "<group>"; };
-		384C541418F3B04900E45CC2 /* SwWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwWorld.cpp; sourceTree = "<group>"; };
-		384C541518F3B04900E45CC2 /* SwWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwWorld.h; sourceTree = "<group>"; };
+		38302DD118FFFC3C00C81078 /* SwBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwBase.cpp; sourceTree = "<group>"; };
+		38302DD418FFFC6100C81078 /* SwWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwWorld.cpp; sourceTree = "<group>"; };
+		38302DD718FFFC7E00C81078 /* SwMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwMap.cpp; sourceTree = "<group>"; };
+		38302DDA18FFFCAB00C81078 /* SwBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwBase.h; sourceTree = "<group>"; };
+		38302DDB18FFFCAB00C81078 /* SwMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwMap.h; sourceTree = "<group>"; };
+		38302DDC18FFFCAB00C81078 /* SwMNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwMNode.cpp; sourceTree = "<group>"; };
+		38302DDD18FFFCAB00C81078 /* SwMNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwMNode.h; sourceTree = "<group>"; };
+		38302DDE18FFFCAB00C81078 /* SwSpriteUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwSpriteUnit.cpp; sourceTree = "<group>"; };
+		38302DDF18FFFCAB00C81078 /* SwSpriteUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwSpriteUnit.h; sourceTree = "<group>"; };
+		38302DE018FFFCAB00C81078 /* SwWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwWorld.h; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -313,7 +315,6 @@
 		E28209EA18FA3DE0005F9721 /* SwActionHeart.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwActionHeart.cpp; sourceTree = "<group>"; };
 		E28209EB18FA3DE0005F9721 /* SwActionHeart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwActionHeart.h; sourceTree = "<group>"; };
 		E28209EC18FA3DE0005F9721 /* SwaMove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwaMove.h; sourceTree = "<group>"; };
-		E28209F818FA4FAB005F9721 /* #SwWave.h# */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "#SwWave.h#"; sourceTree = "<group>"; };
 		E28209F918FA4FAB005F9721 /* SwbPoint.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwbPoint.cpp; sourceTree = "<group>"; };
 		E28209FA18FA4FAB005F9721 /* SwbPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwbPoint.h; sourceTree = "<group>"; };
 		E2820A0118FA58F8005F9721 /* SwWeapon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SwWeapon.cpp; sourceTree = "<group>"; };
@@ -527,19 +528,19 @@
 		E2562C4118E69DD600C1EC12 /* core */ = {
 			isa = PBXGroup;
 			children = (
+				38302DDA18FFFCAB00C81078 /* SwBase.h */,
+				38302DDB18FFFCAB00C81078 /* SwMap.h */,
+				38302DDC18FFFCAB00C81078 /* SwMNode.cpp */,
+				38302DDD18FFFCAB00C81078 /* SwMNode.h */,
+				38302DDE18FFFCAB00C81078 /* SwSpriteUnit.cpp */,
+				38302DDF18FFFCAB00C81078 /* SwSpriteUnit.h */,
+				38302DE018FFFCAB00C81078 /* SwWorld.h */,
+				38302DD718FFFC7E00C81078 /* SwMap.cpp */,
+				38302DD418FFFC6100C81078 /* SwWorld.cpp */,
+				38302DD118FFFC3C00C81078 /* SwBase.cpp */,
 				E28209FF18FA58F8005F9721 /* weapon */,
 				E28209F718FA4FAB005F9721 /* bomb */,
 				E28209E718FA3DE0005F9721 /* action */,
-				384347C118F64CEC00B3E3DB /* SwSpriteUnit.cpp */,
-				384347C218F64CEC00B3E3DB /* SwSpriteUnit.h */,
-				384C540E18F3B04900E45CC2 /* SwBase.cpp */,
-				384C540F18F3B04900E45CC2 /* SwBase.h */,
-				384C541018F3B04900E45CC2 /* SwMap.cpp */,
-				384C541118F3B04900E45CC2 /* SwMap.h */,
-				384C541218F3B04900E45CC2 /* SwMNode.cpp */,
-				384C541318F3B04900E45CC2 /* SwMNode.h */,
-				384C541418F3B04900E45CC2 /* SwWorld.cpp */,
-				384C541518F3B04900E45CC2 /* SwWorld.h */,
 			);
 			name = core;
 			path = ../Classes/core;
@@ -560,7 +561,6 @@
 		E28209F718FA4FAB005F9721 /* bomb */ = {
 			isa = PBXGroup;
 			children = (
-				E28209F818FA4FAB005F9721 /* #SwWave.h# */,
 				E28209F918FA4FAB005F9721 /* SwbPoint.cpp */,
 				E28209FA18FA4FAB005F9721 /* SwbPoint.h */,
 			);
@@ -743,7 +743,6 @@
 				E2E688FE18F97C35001DCAB2 /* dao.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				E2562C4D18E6B5E600C1EC12 /* hero.png in Resources */,
-				E28209FB18FA4FAB005F9721 /* #SwWave.h# in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				E2224AEA18F6FBD6005171E6 /* ma.png in Resources */,
@@ -776,7 +775,6 @@
 				5087E75317EB910900C73F5D /* CloseNormal.png in Resources */,
 				E2224AEB18F6FBD6005171E6 /* ma.png in Resources */,
 				E2562C4E18E6B5E600C1EC12 /* hero.png in Resources */,
-				E28209FC18FA4FAB005F9721 /* #SwWave.h# in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				5087E75417EB910900C73F5D /* CloseSelected.png in Resources */,
 				E2224AF018F6FD3D005171E6 /* green_bow.png in Resources */,
@@ -793,10 +791,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E28209EE18FA3DE0005F9721 /* SwActionHeart.cpp in Sources */,
+				38302DD518FFFC6100C81078 /* SwWorld.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
-				384347C318F64CEC00B3E3DB /* SwSpriteUnit.cpp in Sources */,
+				38302DE318FFFCAB00C81078 /* SwSpriteUnit.cpp in Sources */,
+				38302DD818FFFC7E00C81078 /* SwMap.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				38302DD218FFFC3C00C81078 /* SwBase.cpp in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
+				38302DE118FFFCAB00C81078 /* SwMNode.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 				1AFAF8B816D35DE700DB1158 /* HelloWorldScene.cpp in Sources */,
 				E28209ED18FA3DE0005F9721 /* SwAction.cpp in Sources */,
@@ -810,17 +812,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				384C541818F3B04900E45CC2 /* SwMNode.cpp in Sources */,
+				38302DD918FFFC7E00C81078 /* SwMap.cpp in Sources */,
 				5087E75717EB910900C73F5D /* AppDelegate.cpp in Sources */,
-				384C541618F3B04900E45CC2 /* SwBase.cpp in Sources */,
-				384C541718F3B04900E45CC2 /* SwMap.cpp in Sources */,
 				E213B12618E693DF00EA210C /* ScRoot.cpp in Sources */,
 				5087E75817EB910900C73F5D /* HelloWorldScene.cpp in Sources */,
-				384347C418F64CEC00B3E3DB /* SwSpriteUnit.cpp in Sources */,
-				384C541918F3B04900E45CC2 /* SwWorld.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
+				38302DE218FFFCAB00C81078 /* SwMNode.cpp in Sources */,
+				38302DD618FFFC6100C81078 /* SwWorld.cpp in Sources */,
 				E28209FE18FA4FAB005F9721 /* SwbPoint.cpp in Sources */,
 				E2820A0618FA58F8005F9721 /* SwWeapon.cpp in Sources */,
+				38302DD318FFFC3C00C81078 /* SwBase.cpp in Sources */,
+				38302DE418FFFCAB00C81078 /* SwSpriteUnit.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
