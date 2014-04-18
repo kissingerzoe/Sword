@@ -5,7 +5,37 @@
 #include "SwbPoint.h"
 #include "SwWeapon.h"
 #include <cstdlib>
+#include "tolua++.h"
 USING_NS_CC;
+
+
+static int tolua_set_position_SwBase(lua_State* pState)
+{
+  SwBase* pTest = (SwBase* )tolua_tousertype(pState, 1, 0);
+  Point* _pos = (Point*)tolua_tousertype(pState, 2, 0);
+  if(_pos != NULL && pTest != NULL)
+    {
+      pTest->set_pos(*_pos);
+    }
+
+  return 1;
+}
+
+static int tolua_get_position_SwBase(lua_State* pState)
+{
+  SwBase* pTest = (SwBase* )tolua_tousertype(pState, 1, 0);
+
+  if(pTest != NULL)
+    {
+      Point _pos= pTest->get_pos();
+      tolua_pushuserdata(pState,&_pos);
+    }
+
+  return 1;
+}
+
+
+
 SwWorld::SwWorld(cocos2d::Layer* _layer){
   m_layer=_layer;
   m_size = Director::getInstance()->getVisibleSize();
@@ -13,6 +43,21 @@ SwWorld::SwWorld(cocos2d::Layer* _layer){
   m_half_size.y=0.0f;
   m_origin = Director::getInstance()->getVisibleOrigin();
 }
+void SwWorld::lua_bind(){
+  lua_State* m_pState=NULL;
+  tolua_open(m_pState);
+  // tolua_module(m_pState,NULL,0);
+  // tolua_beginmodule(m_pState,NULL);
+  // tolua_usertype(m_pState,"SwBase");
+  // tolua_beginmodule(m_pState,"SwBase");
+
+  //  tolua_function(m_pState, "get_position", tolua_get_position_SwBase);
+  // tolua_function(m_pState, "set_position", tolua_set_position_SwBase);
+  // tolua_endmodule(m_pState);
+  // tolua_endmodule(m_pState);
+  //
+}
+
 void SwWorld::init(){
   SwBase* _sb=new SwBase(this,"dao.png","dao_shot.png");
   m_hero=_sb;
@@ -20,6 +65,13 @@ void SwWorld::init(){
   m_hero->set_pos(Point(0,50));
   m_map=new SwMap(this);
   add_sprite(m_hero);
+
+
+  
+
+  // auto engine = LuaEngine::getInstance();
+  //ScriptEngineManager::getInstance()->setScriptEngine(engine);
+  //engine->executeScriptFile("src/main.lua");
 }
 
 void SwWorld::add_sprite(SwBase* _sb){

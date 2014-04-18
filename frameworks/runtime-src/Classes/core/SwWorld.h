@@ -10,6 +10,7 @@ class SwWorld{
  public:
   SwWorld(cocos2d::Layer* _layer);
   void init();
+  void lua_bind();
   void add_sprite(SwBase* _sb);
   void remove_sprite(SwBase* _sb);
   void update(float _delta);
