@@ -119,7 +119,6 @@
 		1ABCA1EF18CD8F470087CE3A /* luaconf.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABCA1E818CD8F470087CE3A /* luaconf.h */; };
 		1ABCA1F018CD8F470087CE3A /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABCA1E918CD8F470087CE3A /* lualib.h */; };
 		1ABCA1F118CD8F470087CE3A /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABCA1E918CD8F470087CE3A /* lualib.h */; };
-		1ABCA1F418CD8F540087CE3A /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA1F318CD8F540087CE3A /* libluajit.a */; };
 		1ABCA20018CD8F6E0087CE3A /* tolua_event.c in Sources */ = {isa = PBXBuildFile; fileRef = 1ABCA1F918CD8F6E0087CE3A /* tolua_event.c */; };
 		1ABCA20118CD8F6E0087CE3A /* tolua_event.c in Sources */ = {isa = PBXBuildFile; fileRef = 1ABCA1F918CD8F6E0087CE3A /* tolua_event.c */; };
 		1ABCA20218CD8F6E0087CE3A /* tolua_event.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABCA1FA18CD8F6E0087CE3A /* tolua_event.h */; };
@@ -198,7 +197,6 @@
 		1ABCA26E18CD8F7D0087CE3A /* usocket.c in Sources */ = {isa = PBXBuildFile; fileRef = 1ABCA22D18CD8F7D0087CE3A /* usocket.c */; };
 		1ABCA26F18CD8F7D0087CE3A /* usocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABCA22E18CD8F7D0087CE3A /* usocket.h */; };
 		1ABCA27018CD8F7D0087CE3A /* usocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 1ABCA22E18CD8F7D0087CE3A /* usocket.h */; };
-		1ABCA36318CD9D7F0087CE3A /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA1F618CD8F5F0087CE3A /* libluajit.a */; };
 		2905FAD018CF12E600240AA3 /* lua_cocos2dx_ui_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2905FACE18CF12E600240AA3 /* lua_cocos2dx_ui_auto.cpp */; };
 		2905FAD118CF12E600240AA3 /* lua_cocos2dx_ui_auto.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2905FACE18CF12E600240AA3 /* lua_cocos2dx_ui_auto.cpp */; };
 		2905FAD218CF12E600240AA3 /* lua_cocos2dx_ui_auto.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 2905FACF18CF12E600240AA3 /* lua_cocos2dx_ui_auto.hpp */; };
@@ -211,6 +209,8 @@
 		C0FEF4D718BE0E70001F446C /* lua_debugger.c in Sources */ = {isa = PBXBuildFile; fileRef = C0FEF4D418BE0E70001F446C /* lua_debugger.c */; };
 		C0FEF4D818BE0E70001F446C /* lua_debugger.h in Headers */ = {isa = PBXBuildFile; fileRef = C0FEF4D518BE0E70001F446C /* lua_debugger.h */; };
 		C0FEF4D918BE0E70001F446C /* lua_debugger.h in Headers */ = {isa = PBXBuildFile; fileRef = C0FEF4D518BE0E70001F446C /* lua_debugger.h */; };
+		E24644F119021A490022ACF2 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA1F618CD8F5F0087CE3A /* libluajit.a */; };
+		E24644F219021A6A0022ACF2 /* libluajit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ABCA1F318CD8F540087CE3A /* libluajit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -319,6 +319,8 @@
 		2905FAD518CF143800240AA3 /* lua_cocos2dx_ui_manual.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lua_cocos2dx_ui_manual.hpp; sourceTree = "<group>"; };
 		C0FEF4D418BE0E70001F446C /* lua_debugger.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lua_debugger.c; sourceTree = "<group>"; };
 		C0FEF4D518BE0E70001F446C /* lua_debugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lua_debugger.h; sourceTree = "<group>"; };
+		E24644EC190217E80022ACF2 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = ../../../../external/lua/lua/prebuilt/ios/liblua.a; sourceTree = "<group>"; };
+		E24644EE190219DC0022ACF2 /* libcocos2dx-extensions iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcocos2dx-extensions iOS.a"; path = "../../../../build/build/Debug-iphoneos/libcocos2dx-extensions iOS.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -326,7 +328,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ABCA1F418CD8F540087CE3A /* libluajit.a in Frameworks */,
+				E24644F219021A6A0022ACF2 /* libluajit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,7 +336,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ABCA36318CD9D7F0087CE3A /* libluajit.a in Frameworks */,
+				E24644F119021A490022ACF2 /* libluajit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +346,8 @@
 		1551A334158F2AB200E66CFE = {
 			isa = PBXGroup;
 			children = (
+				E24644EE190219DC0022ACF2 /* libcocos2dx-extensions iOS.a */,
+				E24644EC190217E80022ACF2 /* liblua.a */,
 				1ABCA1E218CD8F230087CE3A /* external */,
 				1AACE74818BC45C200215002 /* auto */,
 				1AACE75B18BC45C200215002 /* manual */,
@@ -935,6 +939,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../../external/lua/luajit/prebuilt/ios",
 					"$(SRCROOT)/../../../../external/lua/lua/prebuilt/ios",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
 				);
 				"OTHER_LDFLAGS[arch=arm64]" = "-llua";
 				"OTHER_LDFLAGS[sdk=iphonesimulator7.1]" = "-llua";
@@ -960,6 +966,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(SRCROOT)/../../../../external/lua/luajit/prebuilt/ios",
 					"$(SRCROOT)/../../../../external/lua/lua/prebuilt/ios",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/external/lua/lua/prebuilt/ios",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
 				);
 				"OTHER_LDFLAGS[arch=arm64]" = "-llua";
 				"OTHER_LDFLAGS[sdk=iphonesimulator7.1]" = "-llua";
@@ -983,7 +991,12 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../../external/lua/luajit/prebuilt/mac";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../../external/lua/luajit/prebuilt/mac",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/build/build/Debug-iphoneos",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/external/lua/luajit/prebuilt/mac",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../2d/platform/mac $(SRCROOT)/../../../../external/glfw3/include/mac";
 			};
@@ -1003,7 +1016,12 @@
 				);
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/../../../../external/lua/luajit/prebuilt/mac";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../../external/lua/luajit/prebuilt/mac",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/build/build/Debug-iphoneos",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/external/lua/luajit/prebuilt/ios",
+					"/Users/yongbo/project/Sword/frameworks/cocos2d-x/external/lua/luajit/prebuilt/mac",
+				);
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(inherited) $(SRCROOT)/../../../2d/platform/mac $(SRCROOT)/../../../../external/glfw3/include/mac";
 			};
