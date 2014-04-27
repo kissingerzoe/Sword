@@ -4,7 +4,9 @@
 #include "cocos2d.h"
 #include <vector>
 class SwBase;
+class SwTestBase;
 class SwMap;
+class lua_State;
 using namespace std;
 class SwWorld{
  public:
@@ -34,5 +36,8 @@ class SwWorld{
   cocos2d::Size m_size;
   cocos2d::Point m_origin;
   cocos2d::Point m_half_size;
+  
+  lua_State* m_pState;
+  SwTestBase* m_tb;
 };
 #endif

@@ -5,25 +5,35 @@
 #include "SwbPoint.h"
 #include "SwWeapon.h"
 #include <cstdlib>
+//#include "lua.h"
+extern "C"{
+#include "lualib.h"
 #include "tolua++.h"
+}
+#include "SwTestBase.h"
 USING_NS_CC;
 
+static int tolua_new_SwBase(lua_State* pState)
+{
+    SwTestBase* pTest = new SwTestBase(NULL);
+    tolua_pushusertype(pState, pTest,"SwTestBase");
+    return 1;
+}
 
 static int tolua_set_position_SwBase(lua_State* pState)
 {
-  SwBase* pTest = (SwBase* )tolua_tousertype(pState, 1, 0);
+  SwTestBase* pTest = (SwTestBase* )tolua_tousertype(pState, 1, 0);
   Point* _pos = (Point*)tolua_tousertype(pState, 2, 0);
   if(_pos != NULL && pTest != NULL)
     {
       pTest->set_pos(*_pos);
     }
-
   return 1;
 }
 
 static int tolua_get_position_SwBase(lua_State* pState)
 {
-  SwBase* pTest = (SwBase* )tolua_tousertype(pState, 1, 0);
+  SwTestBase* pTest = (SwTestBase* )tolua_tousertype(pState, 1, 0);
 
   if(pTest != NULL)
     {
@@ -44,56 +54,62 @@ SwWorld::SwWorld(cocos2d::Layer* _layer){
   m_origin = Director::getInstance()->getVisibleOrigin();
 }
 void SwWorld::lua_bind(){
-  lua_State* m_pState=lua_open();
+   m_pState=lua_open();
+  luaL_openlibs(m_pState);
+  tolua_open(m_pState);
+  tolua_module(m_pState,NULL,0);
+  tolua_beginmodule(m_pState,NULL);
+
+  tolua_usertype(m_pState,"SwTestBase");
+  tolua_cclass(m_pState,"SwTestBase","SwTestBase","",NULL);
+
+  tolua_beginmodule(m_pState,"SwTestBase");
+  tolua_function(m_pState, "new", tolua_new_SwBase);
+  tolua_function(m_pState, "get_pos", tolua_get_position_SwBase);
+  tolua_function(m_pState, "set_pos", tolua_set_position_SwBase);
+  tolua_endmodule(m_pState);
+  tolua_endmodule(m_pState);
+
+
+
+
+ 
   //luaL_openlib(m_pState);
-  if(luaL_dofile(m_pState,"src/ai.lua")==0){
-    lua_getglobal(m_pState,"f");
-    lua_pushnumber(m_pState,1);
-    lua_pushnumber(m_pState,3);
-    if(lua_pcall(m_pState,2,1,0)==0){
-      if(lua_isnumber(m_pState,-1)==0){
-	CCLog("Result is %f",lua_tonumber(m_pState,-1));
-	return;
-      }else{
-	CCLog("e2%s",lua_tostring(m_pState,-1));
-      }
-    }else{
-      CCLog("e3%s",lua_tostring(m_pState,-1));      
-    }
-  }else{
-    CCLog("e1%s",lua_tostring(m_pState,-1));
-  }
 
 
-  
-  //tolua_open(m_pState);
-  
-  /*
-    tolua_module(m_pState,NULL,0);
-    tolua_beginmodule(m_pState,NULL);
-    tolua_usertype(m_pState,"SwBase");
-    tolua_beginmodule(m_pState,"SwBase");
-
-    tolua_function(m_pState, "get_pos", tolua_get_position_SwBase);
-    tolua_function(m_pState, "set_pos", tolua_set_position_SwBase);
-    tolua_endmodule(m_pState);
-    tolua_endmodule(m_pState);
-  */
-  //
 }
 
-  void SwWorld::init(){
-    SwBase* _sb=new SwBase(this,"dao.png","dao_shot.png");
-    m_hero=_sb;
-    m_hero->take_weapon(new SwWeapon(this,m_hero));
-    m_hero->set_pos(Point(0,50));
-    m_map=new SwMap(this);
-    add_sprite(m_hero);
-    lua_bind();
-    // auto engine = LuaEngine::getInstance();
-    //ScriptEngineManager::getInstance()->setScriptEngine(engine);
-    //engine->executeScriptFile("src/main.lua");
+void SwWorld::init(){
+  SwBase* _sb=new SwBase(this,"dao.png","dao_shot.png");
+  m_hero=_sb;
+  m_hero->take_weapon(new SwWeapon(this,m_hero));
+  m_hero->set_pos(Point(0,50));
+  m_map=new SwMap(this);
+  add_sprite(m_hero);
+  lua_bind();
+
+  m_tb=new SwTestBase(m_hero);
+
+  
+  if(luaL_dofile(m_pState,"src/ai.lua")==0){
+    lua_getglobal(m_pState,"ai_update");
+    //tolua_pushnumber(m_pState,10);
+    tolua_pushuserdata(m_pState,m_tb);
+    //tolua_pushusertype(m_pState,m_tb,"SwTestBase");
+    if(lua_pcall(m_pState,1,0,0)==0){
+    }else{
+      CCLog("e2 %s",lua_tostring(m_pState,-1));
+    }
+  }else{
+    CCLog("e3 %s",lua_tostring(m_pState,-1));      
   }
+
+ 
+
+  // auto engine = LuaEngine::getInstance();
+  //ScriptEngineManager::getInstance()->setScriptEngine(engine);
+  //engine->executeScriptFile("src/main.lua");
+}
 
   void SwWorld::add_sprite(SwBase* _sb){
     m_add_list.push_back(_sb);
@@ -128,7 +144,8 @@ void SwWorld::lua_bind(){
       m_hero->set_pos(_p+Point(0,-mc_speed*_d));
     }
     if(m_key_shot){
-      shot();
+      lua_pcall(m_pState,1,0,0);
+      // shot();
     }
     // CCLog("x:%f,y:%f",m_hero->get_pos().x,m_hero->get_pos().y);
     //logic
